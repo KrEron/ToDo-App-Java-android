@@ -71,6 +71,23 @@ public class DbSQLite extends SQLiteOpenHelper {
         }
 
     }
+    public void  priority_down(String task){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT Level FROM ToDoTasks WHERE TaskName = '"+task+"'", null);
+        c.moveToFirst();
+        String Level = c.getString(c.getColumnIndex("Level"));
+        //Log.e("String", Level);
+        if(Integer.parseInt(Level) != 0) {
+            //Log.e("String", task);
+            String strSQL1 = "UPDATE ToDoTasks SET Level = (SELECT Level FROM ToDoTasks WHERE TaskName ='" + task + "') WHERE Level = ((SELECT Level from ToDoTasks WHERE TaskName = '" + task + "') - 1)";
+            db.execSQL(strSQL1);
+            String strSQL2 = "UPDATE " + DB_TABLE + " SET " + DB_COLUMN_TASK_LVL + " = (SELECT Level from ToDoTasks WHERE TaskName = '" + task + "') - 1 WHERE TaskName = '" + task + "'";
+            db.execSQL(strSQL2);
+            db.close();
+        }
+
+    }
     // Funkcja zwarcajaca zawartosc body tasku
     public String getBody(String task){
         SQLiteDatabase db = this.getWritableDatabase();

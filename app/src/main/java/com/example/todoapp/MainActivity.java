@@ -110,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
         dbSQLite.priority_up(task);
         loadTaskList();
     }
+    public void priority_down(View view){
+        View parent = (View)view.getParent();
+        TextView taskTextView = (TextView)parent.findViewById(R.id.task_title);
+        String task = String.valueOf(taskTextView.getText());
+        dbSQLite.priority_down(task);
+        loadTaskList();
+    }
     //  przejscie do activty zawierajacego body taskow
     public void showBody(View view){
         View parent = (View)view.getParent();

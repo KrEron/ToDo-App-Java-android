@@ -9,11 +9,11 @@
     <TextView
         android:id="@+id/task_name"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="62dp"
+        android:background="#009C9C"
         android:gravity="center"
         android:text="TASK NAME"
-        android:textSize="25dp"
-        android:background="#00ffff"/>
+        android:textSize="25dp" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -38,10 +38,11 @@
 
     <Button
         android:id="@+id/edit_task"
-        android:layout_width="59dp"
-        android:layout_height="35dp"
+        android:layout_width="57dp"
+        android:layout_height="36dp"
         android:layout_marginLeft="340dp"
         android:layout_marginTop="-590dp"
+        android:background="#009C9C"
         android:onClick="editTaskName"
         android:text="Edit" />
 </LinearLayout>
