@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_task"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/task_name"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:text="TASK NAME"
+        android:textSize="25dp"
+        android:background="#00ffff"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="496dp">
+
+        <TextView
+            android:id="@+id/body_text"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:text=""
+            android:textSize="25dp" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="editBody"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/edit_task"
+        android:layout_width="59dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="-590dp"
+        android:onClick="editTaskName"
+        android:text="Edit" />
+</LinearLayout>
